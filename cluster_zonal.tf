@@ -26,7 +26,8 @@ resource "google_container_cluster" "zonal_primary" {
   project     = "${var.project_id}"
 
   zone             = "${var.zones[0]}"
-  additional_zones = ["${slice(var.zones,1,length(var.zones))}"]
+  additional_zones = "${compact(list(length(var.zones) > 1 ? join(",", slice(var.zones, 1, length(var.zones))) : join(",", list())))}"
+
 
   network            = "${replace(data.google_compute_network.gke_network.self_link, "https://www.googleapis.com/compute/v1/", "")}"
   subnetwork         = "${replace(data.google_compute_subnetwork.gke_subnetwork.self_link, "https://www.googleapis.com/compute/v1/", "")}"
