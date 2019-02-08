@@ -1,16 +1,15 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
-project adheres to [Semantic Versioning](http://semver.org/).
+## [v0.5.0] - 2019-08-02
+### Changed (from commit 67fe85a01be2bca7b52826314036f484d4f3747f)
+* Workaround additional_zones issue with single-zone configuration for zonal cluster
 
-## [Unreleased]
-### Changed
+### Changed (up to commit 67fe85a01be2bca7b52826314036f484d4f3747f)
 * Set `horizontal_pod_autoscaling` to `true` by default. #42
 * Add `remove_default_node_pool` set to `false` by default #15
 * Allow arbitrary key-value pairs to be set on node pool metadata. #52
-* Add `initial_node_count` parameter to node_pool block. #60 
+* Add `initial_node_count` parameter to node_pool block. #60
 
 ## [v0.4.0] - 2018-12-19
 ### Added
